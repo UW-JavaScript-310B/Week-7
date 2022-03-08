@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+.container{
+  width: 100%;
+  width: 600px;
+}
+
+.form-group {
+  display: flex;
+}
+
+input.valid {
+  background-image: url('./check-svgrepo-com.svg');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 98% 50%;
+  border: 1px solid green;
+}
+
+input.invalid {
+  background-image: url('./exclamation-svgrepo-com.svg');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 98% 50%;
+  border: 1px solid red;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-group label {
+  width: 300px;
+  padding: 10px 10px 10px 0;
+}

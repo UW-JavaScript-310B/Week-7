@@ -8,6 +8,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <script src="https://kit.fontawesome.com/9bfbb90b34.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="constraint-validation.css" />
   </head>
 
@@ -22,7 +23,8 @@
             class="form-control validate-input"
             type="text"
             name="first-name"
-            
+            minlength="3"
+            required
           />
           <small class="error" aria-live="polite"></small>
         </div>
@@ -34,7 +36,8 @@
             class="form-control validate-input"
             type="text"
             name="last-name"
-            
+            minlength="3"
+            required
           />
           <small class="error" aria-live="polite"></small>
         </div>
@@ -46,15 +49,17 @@
             class="form-control validate-input"
             type="email"
             name="email"
+            pattern="\w+@\w+\.\w+"
+            required
           />
           <small class="error" aria-live="polite"></small>
         </div>
 
         <div class="form-group">
           <label for="kind">What can we help with?</label>
-          <select class="form-control" name="kind" id="contact-kind">
-            <option value="choose" selected="selected" disabled>
-              Choose one
+          <select class="form-control" name="kind" id="contact-kind" required>
+            <option value="" selected="selected" disabled>
+              Please choose one
             </option>
             <option value="business">I'm interested in your software</option>
             <option value="technical">I need technical support</option>
