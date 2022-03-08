@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    font-size: 100%;
+    line-height: 1.5rem;
+
+}
+
+#container {
+    margin: 1% 15%;
+    background-color: lightgray;
+}
+
+form {
+
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+div {
+    margin-bottom: 1rem;
+}
+
+label {
+    font-weight: bold;
+}
+
+input{
+    margin-left: 1rem;
+    width: 20rem;
+}
+
+#message {
+    width: 90%;
+}
+
+button {
+    background-color: darkblue;
+    border:  5px solid darkblue;
+    color: white;
+    width: 25%;
+}
