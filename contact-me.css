@@ -1,0 +1,30 @@
+input:invalid {
+  box-shadow: 2px 2px 5px red;
+}
+
+input:valid {
+  box-shadow:  2px 2px 5px green;
+}
+.form-group.valid input {
+  box-shadow: 2px 2px 5px green;
+}
+.form-group.invalid input {
+  box-shadow: 2px 2px 5px red;
+}
+.form-group small {
+  color: red;
+  visibility: hidden;
+}
+.form-group.invalid small {
+  visibility: visible;
+}
+.sub-group {
+  margin-left: 15px;
+}
+.form-select small {
+  color: red;
+  visibility: hidden;
+}
+.form-select.invalid small {
+  visibility: visible;
+}
