@@ -18,8 +18,9 @@
     
       <!-- 
         Shamelessly adapted from Bootstrap 
+        - CV
       -->
-      <form class="row g-3">
+      <form class="row g-3" id="contactForm">
         <div class="col-md-6 form-floating">
           <input type="text" class="form-control" id="name">
           <label for="name" class="form-label">Name</label>
@@ -32,19 +33,21 @@
           <label class="visually-hidden" for="reasonForContact">Reason for Contact</label>
             <select class="form-select" id="reasonForContact">
               <option disabled hidden selected>Reason for Contact</option>
-              <option value="1">Job Opportunity</option>
-              <option value="2">Talk Code</option>
+              <option value="job">Job Opportunity</option>
+              <option value="chat">Talk Code</option>
             </select>
         </div>
-        <div class="col-md-6 form-floating hidden">
+
+        <div class="col-md-6 form-floating hidden" id="jobTitleWrapper">
           <input type="text" class="form-control" id="jobTitle">
           <label for="job-title" class="form-label">Job Title</label>
         </div>
-        <div class="col-md-6 form-floating hidden">
+        <div class="col-md-6 form-floating hidden" id="websiteWrapper">
           <input type="text" class="form-control" id="website">
           <label for="website" class="form-label">Company Website</label>
         </div>
-        <div class="col-12 hidden">
+
+        <div class="col-12 hidden" id="languageWrapper">
           <label class="visually-hidden" for="language">Language</label>
             <select class="form-select" id="language">
               <option disabled hidden selected value="Choose One">Choose One</option>
@@ -56,44 +59,14 @@
             </select>
         </div>
         <div class="col-12 form-floating">
-          <input type="text" class="form-control" id="message" placeholder="">
+          <textarea class="form-control" id="message"></textarea>
           <label for="message" class="form-label">Message</label>
         </div>
 
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Sign in</button>
+          <button type="submit" class="btn btn-primary" id="sendBtn">Send</button>
         </div>
       </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       
     </main>        
     <script src="contact-me.js"></script>
