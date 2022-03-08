@@ -16,9 +16,9 @@
           <h1>Contact Us</h1>
         </div>
       </div>
-      <form action="#">
+      <form id="connect-form" action="">
         <div class="row form-group mb-3">
-          <label class="col-lg-3 col-6" for="first-name">Please enter your first name</label>
+          <label class="col-lg-3 col-6" for="first-name">Please enter your first name<br>(minimum of 3 characters)</label>
           <input
             id="first-name"
             class="col-lg-4 col-5 p-2 border bg-light"
@@ -27,9 +27,10 @@
             minlength="3"
             required
           />
+          <small class="error" aria-live="polite"></small>
         </div>
         <div class="row form-group mb-3">
-          <label class="col-lg-3 col-6" for="last-name">Please enter your last name</label>
+          <label class="col-lg-3 col-6" for="last-name">Please enter your last name<br>(minimum of 3 characters)</label>
           <input
             id="last-name"
             class="col-lg-4 col-5 p-2 border bg-light"
@@ -46,7 +47,8 @@
             class="col-lg-4 col-5 p-2 border bg-light"
             type="email"
             name="email"
-            pattern="/\w+@\w+\.\w+/"
+            pattern="\w+@\w+\.\w+"
+            autocomplete="off"
             required
           />
         </div>
@@ -65,7 +67,7 @@
           </select>
         </div>
         <div class="hidden row form-group mb-3">
-          <label class="col-lg-2 col-6" for="job-title">Please enter your job title</label>
+          <label class="col-lg-3 col-6" for="job-title">Please enter your job title</label>
           <input
             id="job-title"
             class="col-lg-4 col-5 p-2 border bg-light"
@@ -116,5 +118,6 @@
         </div>
       </form>
     </div>
+    <script src="./contact-me.js"></script>
   </body>
 </html>
