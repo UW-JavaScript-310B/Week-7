@@ -7,6 +7,8 @@ input:valid {
 } */
 .invalid {
     box-shadow: 2px 2px 5px orangered;
+    background-color:orangered ;
+    color: white;
 }
 
 .valid {
