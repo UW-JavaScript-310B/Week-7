@@ -8,3 +8,15 @@ input:valid {
 .invalid {
     box-shadow: 2px 2px 5px orangered;
 }
+
+.valid {
+    border: 1px solid forestgreen;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
