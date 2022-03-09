@@ -17,7 +17,7 @@ let selector = document.getElementById('contact-kind');
 
 // First Name Validation
 const checkFirstNameLength = function(e) {
-    let firstNameValidState = firstNameField.value.length > 3;
+    let firstNameValidState = firstNameField.value.length >= 3; // requirements say "3 characters or more"
     if (firstNameValidState === false) {
         e.preventDefault();
         firstNameField.validity.valid = false;
@@ -44,7 +44,7 @@ submitBtn.addEventListener('click', checkFirstNameLength, true);
 // Last Name Validation
 
 const checkLastNameLength = function(e) {
-    let lastNameValidState = lastNameField.value.length > 3;
+    let lastNameValidState = lastNameField.value.length >= 3; // requirements say "3 characters or more"
     if (lastNameValidState === false) {
         e.preventDefault();
         lastNameField.validity.valid = false;
