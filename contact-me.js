@@ -13,34 +13,44 @@ const messageField = document.getElementById('message');
  * @param {Event object} e 
  */
 const submissionValidation = (e) => {
-  if(firstNameField.value.length < 3) {
+  if(firstNameField.value.trim().length < 3) {
     firstNameField.setCustomValidity(`A minimum of three characters are required`);
     firstNameField.reportValidity();
     e.preventDefault();
   }
   else {
+    firstNameField.setCustomValidity('');
     firstNameField.reportValidity();
   }
 
-  if(lastNameField.value.length < 3) {
+  if(lastNameField.value.trim().length < 3) {
     lastNameField.setCustomValidity(`A minimum of three characters are required`);
     lastNameField.reportValidity();
     e.preventDefault();
   }
   else {
+    lastNameField.setCustomValidity('');
     lastNameField.reportValidity();
   }
 
-  if(!emailField.value.match(/\w+@\w+\.\w+/)) {
+  if(!(/\w+@\w+\.\w+/).test(emailField.value.trim())) {
     emailField.setCustomValidity(`Please enter a valid email address`);
     emailField.reportValidity();
     e.preventDefault();
   }
-
-  if(messageField.value.length < 10) {
-    emailField.setCustomValidity(`A minimum of 10 characters is required`);
+  else {
+    emailField.setCustomValidity('');
     emailField.reportValidity();
+  }
+
+  if(messageField.value.trim().length < 10) {
+    messageField.setCustomValidity(`A minimum of 10 characters is required`);
+    messageField.reportValidity();
     e.preventDefault();
+  }
+  else {
+    messageField.setCustomValidity('');
+    messageField.reportValidity();
   }
   form.reportValidity();
 }
@@ -53,13 +63,13 @@ const formRealTimeFeedback = (e) => {
   // set "changed" class to utilize associated CSS styles
   e.target.classList.add('changed');
   
-  if(e.target.name.includes('name') && e.target.value.length < 3) {
+  if(e.target.name.includes('name') && e.target.value.trim().length < 3) {
     e.target.setCustomValidity(`A minimum of three characters are required`);
   }
-  else if(e.target.name.includes('email') && !(/\w+@\w+\.\w+/).test(e.target.value)) {
+  else if(e.target.name.includes('email') && !(/\w+@\w+\.\w+/).test(e.target.value.trim())) {
     e.target.setCustomValidity(`Please enter a valid email address`);
   }
-  else if(e.target.name.includes('message') && e.target.value.length < 10) {
+  else if(e.target.name.includes('message') && e.target.value.trim().length < 10) {
     e.target.setCustomValidity(`A minimum of ten characters are required`);
   }
   else {
