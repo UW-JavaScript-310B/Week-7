@@ -2,7 +2,7 @@
   display: none;
 }
 
-input.valid {
+.changed:valid{
   background-image: url('./check-svgrepo-com.svg');
   background-repeat: no-repeat;
   background-size: 20px;
@@ -10,7 +10,7 @@ input.valid {
   border: 1px solid green !important;
 }
 
-input.invalid {
+.changed:invalid {
   background-image: url('./exclamation-svgrepo-com.svg');
   background-repeat: no-repeat;
   background-size: 20px;

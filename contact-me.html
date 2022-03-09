@@ -53,7 +53,7 @@
           />
         </div>
         <div class="row form-group mb-3">
-          <label class="col-lg-3 col-6" for="reason">Reason for contact</label>
+          <label class="col-lg-3 col-6" for="reason">Reason for contact<br>(optional)</label>
           <select
             id="reason"
             class="col-lg-4 col-5 p-2 border bg-light"
@@ -81,7 +81,9 @@
             id="company-url"
             class="col-lg-4 col-5 p-2 border bg-light"
             type="url"
+            placeholder="https://example.com"
             name="company-url"
+            pattern="https?:\/\/.+\..+"
           />
         </div>
         <div class="hidden row form-group mb-3">
@@ -109,8 +111,8 @@
             class="col-lg-4 col-5 p-2 border bg-light"
             name="message"
             id="message"
-            required>
-          </textarea>
+            minlength="10"
+            required></textarea>
         </div>
         <div class="row form-group mb-3">
           <label class="col-lg-3 col-6" for="submit">We generally respond in 24-hours</label>
