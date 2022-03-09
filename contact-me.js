@@ -19,7 +19,6 @@ const submissionValidation = (e) => {
     e.preventDefault();
   }
   else {
-    firstNameField.setCustomValidity('');
     firstNameField.reportValidity();
   }
 
@@ -29,7 +28,6 @@ const submissionValidation = (e) => {
     e.preventDefault();
   }
   else {
-    lastNameField.setCustomValidity('');
     lastNameField.reportValidity();
   }
 
@@ -53,9 +51,7 @@ const submissionValidation = (e) => {
  */
 const formRealTimeFeedback = (e) => {
   // set "changed" class to utilize associated CSS styles
-
-    e.target.classList.add('changed');
-  
+  e.target.classList.add('changed');
   
   if(e.target.name.includes('name') && e.target.value.length < 3) {
     e.target.setCustomValidity(`A minimum of three characters are required`);
