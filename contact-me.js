@@ -63,7 +63,7 @@ function validateMessage() {
         console.log("Bad Input");
         parentDivMessage.classList.remove("valid");
         parentDivMessage.classList.add("invalid");
-        message.setCustomValidity("Your message must include at least 10 characters");
+        message.setCustomValidity("Your message must include 10 or more characters");
         message.validity.valid = false;
         message.reportValidity();
     } else {

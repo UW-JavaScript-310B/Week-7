@@ -17,24 +17,31 @@ const parentDivEmail = emailAddr.parentElement
 // console.log(firstName.closest(".form-group"))
 // console.log(firstName)
 // console.log(inputValue)
+// console.log(submitButton)
 
 //hide and show fields depending on selection of interest
 const selector = document.getElementById("contact-kind");
 
 const selectOption = () => {
     const selection = selector.value;
+    const bizfields = document.getElementById("biz-name");
+    const techfields = document.getElementById("tech-type");
 
     if (selection === "business") {
-        const bizfields = document.getElementById("biz-name");
         bizfields.classList.remove("hidden");
         bizfields.classList.add("show");
+        techfields.classList.remove("show");
+        techfields.classList.add("hidden");
     } else if (selection === "technical") {
-        const techfields = document.getElementById("tech-type");
         techfields.classList.remove("hidden");
         techfields.classList.add("show");
+        bizfields.classList.add("hidden");
+        bizfields.classList.remove("show");
     } else {
         bizfields.classList.add("hidden");
         techfields.classList.add("hidden");
+        bizfields.classList.remove("show");
+        techfields.classList.remove("show");
 
     }
 
