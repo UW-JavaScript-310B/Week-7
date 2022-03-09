@@ -37,14 +37,16 @@
           <div>
           <label for="contact-reason">What are you interested in learning about?
             <select name="menu-items" id="contact-reason">
-              <option value="job">Job Opportunity </option>
-              <option value="talkCode">Talk Code</option>
+              <option value="" disabled selected hidden>Choose a contact reason</option>
+              <option value="job-opp">Job Opportunity </option>
+              <option value="talk-code">Talk Code</option>
             </select>
           </label>
         </div>
 
-          <div class="job-fields">
+          <div id="job-fields" class="hidden">
             <div>
+
               <label for="job">Job Title
               <input type="text" name="job" id="job" autofocus></label>
             </div>
@@ -54,7 +56,7 @@
             </div>
           </div>
 
-          <div class="language-type">
+          <div id="language-type" class="hidden">
             <label for="coding-lang">What coding language are you interested in?
               <select name="coding-lang" id="coding-lang">
                 <option value="C">C++</option>
@@ -78,7 +80,7 @@
     </form>
 
 
-    </mainv>
+    </main>
     <!-- end of main container -->
 
 
