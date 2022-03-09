@@ -88,22 +88,26 @@
         </div>
         <div class="hidden row form-group mb-3">
           <label class="col-lg-3 col-6" for="reason">Primary coding language</label>
-          <select
+          <input
+            type="text"
             id="coding-language"
+            list="languages"
             class="col-lg-4 col-5 p-2 border bg-light"
             name="coding-language"
           >
-            <option value="" selected="selected" disabled>
-              Please choose...
-            </option>
-            <option value="job">C#</option>
-            <option value="code">C++</option>
-            <option value="code">Haskel</option>
-            <option value="code">Java</option>
-            <option value="code">JavaScript</option>
-            <option value="code">Lua</option>
-            <option value="code">Python</option>
-          </select>
+            <datalist id="languages">
+              <option value="" selected="selected" disabled>
+                Please choose...
+              </option>
+              <option>C#</option>
+              <option>C++</option>
+              <option>Haskel</option>
+              <option>Java</option>
+              <option>JavaScript</option>
+              <option>Lua</option>
+              <option>Python</option>
+            </datalist>
+          </input>
         </div>
         <div class="row form-group mb-3">
           <label class="col-lg-3 col-6" for="reason">Personal message</label>
