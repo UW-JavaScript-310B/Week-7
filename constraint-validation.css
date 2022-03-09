@@ -1,0 +1,24 @@
+/* input:invalid {
+    box-shadow: 2px 2px 5px orangered;
+}
+
+input:valid {
+    border: 1px solid forestgreen;
+} */
+.invalid {
+    box-shadow: 2px 2px 5px orangered;
+    background-color:orangered ;
+    color: white;
+}
+
+.valid {
+    border: 1px solid forestgreen;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
