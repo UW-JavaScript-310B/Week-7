@@ -5,6 +5,52 @@
   </head>
 
   <body>
-    <!-- TODO -->
+    <h1>Contact</h1>
+
+
+
+        <form method="get" name="contact-form">
+
+            <h2 class="label row-1">Contact Us</h2>
+
+            <label class="label row-3"> Name
+                <input class="label-text" type="text" name="name" autofocus>
+            </label>
+
+            <div class="form-group">
+              <label for="kind">Reason for contacting</label>
+              <select class="form-control" name="kind" id="contact-kind">
+                <option value="choose" selected="selected" disabled>
+                  Choose one
+                </option>
+                <option value="job-opportunity">Job opportunity</option>
+                <option value="talk-code">Talk code</option>
+              </select>
+              <small class="error" aria-live="polite"></small>
+            </div>
+
+            <label class="label row-6">Email
+                <input class="label-text" type="text" name="email" placeholder="example@example.com">
+            </label>
+
+            <label class="label row-7"> Message
+                <textarea class="label-text" name="message" rows="3" cols="15"></textarea>
+            </label>
+
+
+            <div class="center-button label row-8">
+                <input type="submit" value="send" name="submit">
+            </div>
+
+            
+
+            
+
+
+
+        </form>
+
+    </main>
+    <script src="contact-me.js"></script>
   </body>
 </html>
