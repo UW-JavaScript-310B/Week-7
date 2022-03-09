@@ -11,6 +11,33 @@ const parentEmail = emailAddress.parentElement
 
 console.log(submitButton)
 
+const selector = document.getElementById("contact-kind");
+
+const selectOption = () => {
+    const selection = selector.value;
+    const bizfields = document.getElementById("biz-name");
+    const techfields = document.getElementById("tech-type");
+
+    if (selection === "business") {
+        bizfields.classList.remove("hidden");
+        bizfields.classList.add("show");
+        techfields.classList.remove("show");
+        techfields.classList.add("hidden");
+    } else if (selection === "technical") {
+        techfields.classList.remove("hidden");
+        techfields.classList.add("show");
+        bizfields.classList.remove("show");
+        bizfields.classList.add("hidden");
+    } else {
+        bizfields.classList.add("hidden");
+        techfields.classList.add("hidden");
+        techfields.classList.remove("show");
+        bizfields.classList.remove("show");
+
+    }
+
+}
+
 function validateFirstName() {
     const validState = nameField.value.length >= 3;
     if (!validState) {
@@ -76,3 +103,5 @@ const checkValidation = (e) => {
 }
 
 submitButton.addEventListener("click", checkValidation);
+
+selector.addEventListener("change", selectOption)

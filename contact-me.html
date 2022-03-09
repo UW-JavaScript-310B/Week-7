@@ -1,56 +1,75 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Contact Me</title>
-  </head>
 
-  <body>
-    <h1>Contact</h1>
+<head>
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="contact-me.css" />
+</head>
 
-
-
-        <form method="get" name="contact-form">
-
-            <h2 class="label row-1">Contact Us</h2>
-
-            <label class="label row-3"> Name
-                <input class="label-text" type="text" name="name" autofocus>
-            </label>
+<body>
+    <div class="container">
+        <h1>Contact</h1>
+        <form id="connect-form" action="">
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input id="first-name" class="form-control validate-input" type="text" name="first-name" />
+                <small class="error" aria-live="polite"></small>
+            </div>
 
             <div class="form-group">
-              <label for="kind">Reason for contacting</label>
-              <select class="form-control" name="kind" id="contact-kind">
-                <option value="choose" selected="selected" disabled>
-                  Choose one
-                </option>
-                <option value="job-opportunity">Job opportunity</option>
-                <option value="talk-code">Talk code</option>
-              </select>
-              <small class="error" aria-live="polite"></small>
+                <label for="last-name">Last Name</label>
+                <input id="last-name" class="form-control validate-input" type="text" name="last-name" />
+                <small class="error" aria-live="polite"></small>
             </div>
 
-            <label class="label row-6">Email
-                <input class="label-text" type="text" name="email" placeholder="example@example.com">
-            </label>
-
-            <label class="label row-7"> Message
-                <textarea class="label-text" name="message" rows="3" cols="15"></textarea>
-            </label>
-
-
-            <div class="center-button label row-8">
-                <input type="submit" value="send" name="submit">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" class="form-control validate-input" type="email" name="email"
+                    pattern="/\w+@\w+\.\w+" />
+                <small class="error" aria-live="polite"></small>
             </div>
 
-            
+            <div class="form-group">
+                <label for="kind">Reason for contacting</label>
+                <select class="form-control" name="kind" id="contact-kind">
+                    <option value="choose" selected="selected" disabled>
+                        Choose one
+                    </option>
+                    <option value="business">Job opportunity</option>
+                    <option value="technical">Talk code</option>
+                </select>
+                <small class="error" aria-live="polite"></small>
 
-            
 
+            </div>
 
+            <div id="biz-name" class="form-group hidden">
+                <label for="job-title">Job Title</label>
+                <input type="text" id="job-title">
+                <label for="website">Company Website</label>
+                <input type="url" id="website">
+            </div>
 
+            <div id="tech-type" class="form-group hidden">
+                <label for="language">Coding Language</label>
+                <input type="text" id="language">
+            </div>
+
+            <div id="messageInput">
+                <label for="message">Additional Information
+                <textarea rows="4" cols="125" name="message" id="message"> </textarea>
+            </label>
+            </div>
+
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Submit" />
+            </div>
         </form>
+    </div>
 
-    </main>
     <script src="contact-me.js"></script>
-  </body>
+</body>
+
 </html>
