@@ -26,13 +26,13 @@
           <label for="name" class="form-label">Name</label>
         </div>
         <div class="col-md-6 form-floating">
-          <input type="email" class="form-control" id="email">
+          <input type="email" class="form-control" id="email" required>
           <label for="email" class="form-label">Email</label>
         </div>
         <div class="col-12" id="contact-div">
           <label class="visually-hidden" for="reasonForContact">Reason for Contact</label>
             <select class="form-select" id="reasonForContact">
-              <option disabled hidden selected>Reason for Contact</option>
+              <option  selected value="reason">Reason for Contact</option>
               <option value="job">Job Opportunity</option>
               <option value="chat">Talk Code</option>
             </select>
@@ -51,7 +51,8 @@
           <label for="website" class="form-label">Company Website</label>
         </div>
 
-        <div class="col-12 hidden" id="languageWrapper">
+        <!-- Extra Credit #2 <select> version that doesn't work -->
+        <!-- <div class="col-12 hidden" id="languageWrapper">
           <label class="visually-hidden" for="language">Language</label>
             <select class="form-select" id="language">
               <option disabled hidden selected value="Choose One">Choose One</option>
@@ -61,7 +62,22 @@
               <option value="Python">Python</option>
               <option value="Other">Other</option>
             </select>
+        </div> -->
+
+        <!-- Extra Credit #2 <datalist> version -->
+        <div class="col-12 hidden" id="languageWrapper">
+          <label class="visually-hidden" for="language">Language</label>
+          <input class="form-control" list="languagelist" id="language" placeholder="Click or type to choose one"/>
+            <datalist id="languagelist"  required>
+              <option disabled selected value="Click to select a language"></option>
+              <option value="HTML"></option>
+              <option value="CSS"></option>
+              <option value="JavaScript"></option>
+              <option value="Python"></option>
+              <option value="Other"></option>
+              </datalist>
         </div>
+
         <div class="col-12 form-floating">
           <textarea class="form-control" id="message"></textarea>
           <label for="message" class="form-label">Message</label>
