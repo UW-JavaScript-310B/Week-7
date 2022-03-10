@@ -14,14 +14,14 @@
   <body>
     <div class="container">
       <h1>Connect With Us</h1>
-      <form id="connect-form" action="">
+      <form id="connect-form" action="post">
         <div class="form-group">
           <label for="first-name">First Name</label>
           <input
             id="first-name"
             class="form-control validate-input"
             type="text"
-            name="first-name"
+            name="firstName"
             
           />
           <small class="error" aria-live="polite"></small>
@@ -33,7 +33,7 @@
             id="last-name"
             class="form-control validate-input"
             type="text"
-            name="last-name"
+            name="lastName"
             
           />
           <small class="error" aria-live="polite"></small>
@@ -46,13 +46,14 @@
             class="form-control validate-input"
             type="email"
             name="email"
+            maxlength="64"
           />
           <small class="error" aria-live="polite"></small>
         </div>
 
         <div class="form-group">
           <label for="kind">What can we help with?</label>
-          <select class="form-control" name="kind" id="contact-kind">
+          <select class="form-control validate-input" name="kind" id="contact-kind">
             <option value="choose" selected="selected" disabled>
               Choose one
             </option>
@@ -67,6 +68,7 @@
             class="form-check-input"
             type="checkbox"
             name="yes-newsletter"
+            
           />
           <label class="form-check-label" for="yes-newsletter"
             >Join Newsletter?
@@ -75,11 +77,11 @@
 
         <div class="form-group">
           <label for="doge">How much DogeCoin u donate me?</label>
-          <input type="number" id="doge" min=20>
+          <input type="number" id="doge" min=20 step="2">
         </div>
 
         <div class="form-group">
-          <input class="btn btn-primary" type="submit" value="Sign up" />
+          <input class="btn btn-primary" id = "submit" type="submit" value="Sign up" name = "submit"/>
         </div>
       </form>
     </div>

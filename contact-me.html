@@ -2,9 +2,94 @@
 <html>
   <head>
     <title>Contact Me</title>
-  </head>
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <style>
+    .hide{
+      display:none;
+    }
 
+    input:invalid {
+    box-shadow: 2px 2px 5px orangered;
+    }
+    input:valid {
+    border: 1px solid forestgreen;
+    }
+    textarea:invalid {
+    box-shadow: 2px 2px 5px orangered;
+    }
+    textarea:valid {
+    border: 1px solid forestgreen;
+    }
+
+  </style>
+  </head>
   <body>
-    <!-- TODO -->
+    <div class="container">
+        <h1>Contact info!</h1>
+        <fieldset>
+            <form action="post" id="contactInfo">
+            <div class="form-group">
+              <label for="fullName">Name</label>
+              <input type="text" id="fullName" name="fullName" class="form-control validate-input" placeholder="Enter fullname">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-control validate-input" placeholder="abc@abc.com">
+            </div>
+            
+            <div class="form-group">
+              <label for="reason">Reason for contacting</label>
+             <select class="form-control" id="reason" name="reason">
+              <option selected value="" disabled>Select option</option>
+                <option value="job">Job opportunity</option>
+                <option value="talk">Talk code</option>
+             </select>
+            </div>
+            <div id="jobDiv" class="form-group hide">
+              <label for="jobTittle">Job title</label>
+              <input type="text" id="jobTittle" name="jobTittle" class="form-control validate-input" placeholder="">
+            </div>
+
+            <div id="jobDiv2" class="form-group hide">
+              <label for="company">Company website</label>
+              <input type="url" id="company" name="company" class="form-control validate-input"  placeholder="">
+            </div>
+         
+          <div id="talkDiv" class="form-group hide">
+           
+              <label for="codingLang">Coding Language</label>
+              <select class="form-control validate-input" id="codingLang" name="codingLang">
+                <option selected value="" disabled>Choose one</option>
+                  <option value="java">Java</option>
+                  <option value="python">Python</option>
+                  <option value="c">C++</option>
+                  <option value="javascript">Javascript</option>
+                  
+               </select>
+          
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea type="text" id="message" name="message" class="form-control validate-input" maxlength="100" placeholder="character count should not exceed 100"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            
+            <input type="submit" id="submit" name="submit" class="btn btn-primary">
+          </div>
+
+        </form>
+
+      </fieldset>
+
+    </div>
+
+    <script src="contact-me.js"></script>
   </body>
 </html>
