@@ -21,7 +21,6 @@ const localNameValidation = (e) => {
     e.target.classList.remove('invalid');
     e.target.classList.add('valid');
     e.target.setCustomValidity('');
-    e.target.validity.valid = true;
   }
 }
 
@@ -40,7 +39,6 @@ const localEmailValidation = (e) => {
     e.target.classList.remove('invalid');
     e.target.classList.add('valid');
     e.target.setCustomValidity('');
-    e.target.validity.valid = true;
   }
 }
 
