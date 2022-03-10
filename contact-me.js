@@ -12,18 +12,20 @@ const selectOption = (e) =>{
     const selection = selector.value;
 
     if (selection==="job-opportunity"){
-        const reasonFields = document.getElementById('jobs')
-        reasonFields.classList.remove('hidden')
-
-        reasonFields.classList.add('show')
+        const jobFields = document.getElementById('jobs')
+        //const codeFields = document.getElementById('codes')
+        //codeFields.classList.add('hidden')
+        jobFields.classList.remove('hidden')
+        jobFields.classList.add('show')
 
     } else{
-        const reasonFields = document.getElementById('jobs')
-        reasonFields.classList.add('hidden')
+        const codeFields = document.getElementById('codes')
+        const jobFields = document.getElementById('jobs')
+        jobFields.classList.add('hidden')
+        codeFields.classList.remove('hidden')
+        codeFields.classList.add('show')
     }
 }
-
-
 
 const checkValidation = (e) =>{
 
