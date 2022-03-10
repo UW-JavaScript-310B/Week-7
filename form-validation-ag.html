@@ -40,7 +40,7 @@
 
         <div class="form-group">
           <label for="reason">Reason for contacting us</label>
-          <select class="form-control" name="reason" id="contact-reason">
+          <select class="form-control" name="reason" id="contact-reason" required>
             <option value="choose" selected="selected" disabled>
               Choose one
             </option>
@@ -56,7 +56,6 @@
              class="form-control validate-input"
              type="text"
              name="job"
-             required
                  />
         <small class="error" aria-live="polite"></small>
                 </div>
@@ -65,8 +64,10 @@
             <label for="company">Company website:</label>
                 <input
                    class="form-control validate-input"
-                     type="text"
+                     type="url"
                      name="company"
+                     pattern = "(www|http:|https:)+[^\s]+[\w]"
+                     placeholder = "https://www.example.com"
                          />
              <small class="error" aria-live="polite"></small>
                         </div>
