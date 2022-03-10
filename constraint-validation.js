@@ -1,18 +1,15 @@
 // TODO
 const firstNameField = document.getElementById("first-name");
 const form = document.getElementById("connect-form");
-
+/*
 const checkValidation = (e) => {
   //debugger;
   console.log(firstNameField.value.length);
   const validState = firstNameField.value.length > 3;
   const formGrp = firstNameField.parentElement;
   firstNameField.setCustomValidity("");
-  //validState = false;
-  //firstNameField.closest("form-group").classList.add("invalid");
 
   console.log(firstNameField.parentElement);
-  //const validState = firstNameField.value.length > 3;
 
   if (!validState) {
     e.preventDefault();
@@ -34,20 +31,18 @@ const checkValidation = (e) => {
 
 form.addEventListener("submit", checkValidation);
 //TODO - there is an issue when we refresh the page. Need to investigate this
+*/
+
 /*
-function validateForm() {
+const checkValidation = () => {
   //debugger;
   console.log(firstNameField.value.length);
   const validState = firstNameField.value.length > 3;
   const formGrp = firstNameField.parentElement;
-  //validState = false;
-  //firstNameField.closest("form-group").classList.add("invalid");
 
   console.log(firstNameField.parentElement);
-  //const validState = firstNameField.value.length > 3;
 
   if (!validState) {
-    //e.preventDefault();
     formGrp.classList.add("invalid");
     formGrp.classList.remove("valid");
     firstNameField.validity.valid = false;
@@ -59,14 +54,13 @@ function validateForm() {
     formGrp.classList.remove("invalid");
     formGrp.classList.add("valid");
     firstNameField.validity.valid = true;
-    firstNameField.reportValidity;
     firstNameField.setCustomValidity("");
+    firstNameField.reportValidity;
   }
-  //debugger;
+
   console.log(validState);
   return validState;
-}
-*/
+};
 
 /*
     if (!validFirstName) {
