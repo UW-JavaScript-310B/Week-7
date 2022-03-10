@@ -6,6 +6,8 @@ const lastField = document.getElementById("last-name")
 
 let emailField = document.getElementById("email")
 
+//let mailFormat = [a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$;
+
 // emailField validated in html document
 
 const form = document.getElementById("connect-form")
@@ -21,7 +23,10 @@ const checkValidation = (e) =>{
 
     const validStateLast = lastField.value.length > 3
 
-    //const validStateEmail = emailField.value.patternMismatch()
+    // const validStateEmail = emailField.value.match("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$")
+    //
+    // console.log(validStateEmail)
+
 
     if (!validState) {
 
