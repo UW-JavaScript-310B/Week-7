@@ -1,10 +1,95 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Contact Me</title>
-  </head>
+<head>
+  <title>Contact</title>
+  <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="contact-me.css" />
+</head>
 
-  <body>
-    <!-- TODO -->
-  </body>
+<body>
+<div class="container">
+  <h1>Connect With Me</h1>
+  <form id="connect-form" action="">
+    <div class="form-group">
+      <label for="first-name">First Name</label>
+      <input
+              id="first-name"
+              class="form-control validate-input"
+              type="text"
+              name="first-name"
+
+      />
+      <small class="error" aria-live="polite"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+              id="email"
+              class="form-control validate-input"
+              type="email"
+              name="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+      />
+      <small class="error" aria-live="polite"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="kind">Reason for contacting</label>
+      <select class="form-control" name="kind" id="contact-kind">
+        <option value="choose" selected="selected" disabled>
+          Choose one
+        </option>
+        <option value="job-opportunity">Job Opportunity</option>
+        <option value="talk-code">Talk Code</option>
+      </select>
+      <small class="error" aria-live="polite"></small>
+    </div>
+
+    <div class="form-group hidden" id="jobs">
+      <label for="job-title">Job Title</label>
+      <input
+              id="job-title"
+              type="text"
+      />
+      <label for="company-website">Company Website</label>
+      <input
+              id="company-website"
+              type="text"
+      />
+
+    </div>
+
+
+    <div class="form-check mb-3">
+      <label for="talking-code">Programming Language</label>
+      <input
+              class="form-check-input"
+              type="text"
+              name="yes-code"
+              id="talking-code"
+      />
+      <label class="form-check-label" for="yes-code"
+      >Want to talk code?
+      </label>
+    </div>
+
+<!--    <div class="form-group">-->
+<!--      <label for="doge">How much DogeCoin u donate me?</label>-->
+<!--      <input type="number" id="doge" min=20>-->
+<!--    </div>-->
+
+    <div class="form-group">
+      <input class="btn btn-primary" type="submit" value="Sign up" />
+    </div>
+  </form>
+</div>
+
+<script src="contact-me.js"></script>
+</body>
 </html>

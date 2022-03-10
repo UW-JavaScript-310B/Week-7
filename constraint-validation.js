@@ -23,9 +23,10 @@ const selectOption = () =>{
     if (selection==="business"){
         const bizFields = document.getElementById('biz-name')
         bizFields.classList.remove('hidden')
-        //bizFields.classList.
+
         //.show is presenting an error
         //Uncaught TypeError: bizFields.classList.show is not a function
+        //changed to .add
         bizFields.classList.add('show')
 
         //bizFields.classList.show('show')
