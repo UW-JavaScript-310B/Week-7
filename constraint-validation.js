@@ -23,7 +23,7 @@ const checkValidation = (e) => {
     firstNameField.parentElement.classList.add("valid");
   }
   
-  if (!lastNameValidState && lastNameField.value) {
+  if ((!lastNameValidState && lastNameField.value) || (!lastNameField.value)) {
     lastNameField.setCustomValidity(
       "Your last name must be longer than 3 letters"
     );
