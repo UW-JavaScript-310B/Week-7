@@ -2,18 +2,18 @@
   display: none;
 }
 
-.changed:valid{
+[aria-invalid="false"]{
   background-image: url('./check-svgrepo-com.svg');
   background-repeat: no-repeat;
-  background-size: 20px;
-  background-position: 98% 50%;
+  background-size: 12px;
+  background-position: 99.3% 10%;
   border: 1px solid green !important;
 }
 
-.changed:invalid {
+[aria-invalid="true"] {
   background-image: url('./exclamation-svgrepo-com.svg');
   background-repeat: no-repeat;
-  background-size: 20px;
-  background-position: 98% 50%;
+  background-size: 12px;
+  background-position: 99.3% 10%;
   border: 1px solid red !important;
 }

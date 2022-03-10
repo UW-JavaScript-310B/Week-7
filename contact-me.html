@@ -16,18 +16,19 @@
           <h1>Contact Us</h1>
         </div>
       </div>
-      <form id="connect-form" action="">
+      <form id="connect-form" action="" novalidate>
         <div class="row form-group mb-3">
           <label class="col-lg-3 col-6" for="first-name">Please enter your first name<br>(minimum of 3 characters)</label>
           <input
             id="first-name"
             class="col-lg-4 col-5 p-2 border bg-light"
             type="text"
+            title="First name must be three or more characters"
             name="first-name"
             minlength="3"
+            autocomplete="off"
             required
           />
-          <small class="error" aria-live="polite"></small>
         </div>
         <div class="row form-group mb-3">
           <label class="col-lg-3 col-6" for="last-name">Please enter your last name<br>(minimum of 3 characters)</label>
@@ -35,8 +36,10 @@
             id="last-name"
             class="col-lg-4 col-5 p-2 border bg-light"
             type="text"
+            title="Last name must be three or more characters"
             name="last-name"
             minlength="3"
+            autocomplete="off"
             required
           />
         </div>
@@ -46,6 +49,7 @@
             id="email"
             class="col-lg-4 col-5 p-2 border bg-light"
             type="email"
+            title="Must be valid email address"
             name="email"
             pattern="\w+@\w+\.\w+"
             autocomplete="off"
@@ -76,24 +80,26 @@
           />
         </div>
         <div class="hidden row form-group mb-3">
-          <label class="col-lg-3 col-6" for="job-title">Company website URL</label>
+          <label class="col-lg-3 col-6" for="company-url">Company website URL</label>
           <input
             id="company-url"
             class="col-lg-4 col-5 p-2 border bg-light"
             type="url"
             placeholder="https://example.com"
+            title="Must be a valid website address"
             name="company-url"
             pattern="https?:\/\/.+\..+"
           />
         </div>
         <div class="hidden row form-group mb-3">
-          <label class="col-lg-3 col-6" for="reason">Primary coding language</label>
+          <label class="col-lg-3 col-6" for="coding-language">Primary coding language</label>
           <input
-            type="text"
+            
             id="coding-language"
-            list="languages"
             class="col-lg-4 col-5 p-2 border bg-light"
+            type="text"
             name="coding-language"
+            list="languages"
             placeholder="Choose one or enter manually..."
           >
             <datalist id="languages">
@@ -108,11 +114,12 @@
           </input>
         </div>
         <div class="row form-group mb-3">
-          <label class="col-lg-3 col-6" for="reason">Personal message</label>
+          <label class="col-lg-3 col-6" for="message">Personal message</label>
           <textarea
+            id="message"  
             class="col-lg-4 col-5 p-2 border bg-light"
+            title="Must be ten or more characters"
             name="message"
-            id="message"
             minlength="10"
             required></textarea>
         </div>
