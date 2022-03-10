@@ -58,9 +58,13 @@ const dropDownMenu = () => {
     if (userSelect === "job") {
         jobOption.classList.remove("hidden");
         jobOption.classList.add("show");
+        talkOption.classList.add("hidden");
+        talkOption.classList.remove("show");
     } else if (userSelect === "talk") {
         talkOption.classList.remove("hidden");
         talkOption.classList.add("show");
+        jobOption.classList.add("hidden");
+        jobOption.classList.remove("show");
     } else {
         console.log("yikes. this is broken.")
     }
