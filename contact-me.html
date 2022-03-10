@@ -1,10 +1,103 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Contact Me</title>
+    <title>Form Validation</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="form-validation-ag.css" />
   </head>
 
   <body>
-    <!-- TODO -->
+    <div class="container">
+      <h1>Connect With Us</h1>
+      <form id="connect-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            id="name"
+            class="form-control validate-input"
+            type="text"
+            name="name"
+            
+          />
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            class="form-control validate-input"
+            type="email"
+            name="email"
+                     />
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Reason for contacting us</label>
+          <select class="form-control" name="reason" id="contact-reason" required>
+            <option value="choose" selected="selected" disabled>
+              Choose one
+            </option>
+            <option value="job">Job opportunity</option>
+            <option value="talk-code">Talk Code</option>
+          </select>
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="form-group hidden" id="job" >
+            <label for="job">Job Title:</label>
+            <input
+             class="form-control validate-input"
+             type="text"
+             name="job"
+                 />
+        <small class="error" aria-live="polite"></small>
+                </div>
+
+          <div class="form-group hidden" id="company" >
+            <label for="company">Company website:</label>
+                <input
+                   class="form-control validate-input"
+                     type="url"
+                     name="company"
+                     pattern = "(www|http:|https:)+[^\s]+[\w]"
+                     placeholder = "https://www.example.com"
+                         />
+             <small class="error" aria-live="polite"></small>
+                        </div>
+
+        <div class="form-group hidden"  id="talk-code">
+         <label for="talk-code">Talk Code</label>
+            <select class="form-control">
+            <option value="choose" selected="selected" disabled>
+                 Choose one
+            </option>
+            <option name="talk-code" value="perl">Perl</option>
+            <option name="talk-code" value="javascript">Javascript</option>
+            <option name="talk-code" value="ruby">Ruby</option>
+            <option name="talk-code" value="php">PHP</option>
+                </select>   
+        <small class="error" aria-live="polite"></small>
+            </div>
+
+
+            <div class="form-group">
+                <label for="message">Message for us:</label>
+                <textarea class="form-control" id="message" rows = 5 required></textarea>
+
+            </div>
+        <div class="form-group">
+          <input class="btn btn-primary" type="submit" value="Sign up" />
+        </div>
+      </form>
+    </div>
+
+    <script src="contact-me.js"></script>
   </body>
 </html>
