@@ -8,7 +8,6 @@ const companyUrlField = document.getElementById('company-url');
 const codingLanguageField = document.getElementById('coding-language');
 const messageField = document.getElementById('message');
 
-
 const validationRules = {
   'first-name': {
     id: 'first-name',
@@ -62,13 +61,11 @@ const validationRules = {
 }
 
 /**
- * Upon submit event, validate first name, last name, email, and textarea fields
+ * Upon submit event, validate all form fields
  * @param {Event object} e 
  */
 const submissionValidation = (e) => {
-
   Object.keys(validationRules).forEach(key => {
-    
     const element = document.getElementById(validationRules[key].id);
     const elementValue = element.value.trim();
     if(element.required && (elementValue.length < validationRules[key].minLength || !validationRules[key].pattern.test(elementValue))) {
@@ -84,14 +81,12 @@ const submissionValidation = (e) => {
 }
 
 /**
- * Provides real-time form field feedback via setting custom validity messaging
+ * Provides real-time form field validation
  * @param {Event object} e 
  */
-const formRealTimeFeedback = (e) => {
+const inputValidation = (e) => {
   const element = e.target;
   const elementValue = element.value.trim();
-
-  console.log(e.target.id);
 
   if(element.required && (elementValue.length < validationRules[e.target.id].minLength || !validationRules[e.target.id].pattern.test(elementValue))) {
     e.target.setCustomValidity(validationRules[e.target.id].validation);
@@ -131,7 +126,7 @@ const formRealTimeFeedback = (e) => {
 }
 
 /**
- * Helper function to set boolearn required attribute on HTML elements
+ * Helper function to set boolean required attribute on HTML elements
  * @param {HTML Elerment} element 
  * @param {boolean} state 
  */
@@ -149,6 +144,6 @@ const updateCssClass = (element, action, cssClass) => {
   element.classList[action](cssClass);
 }
 
-form.addEventListener('input', formRealTimeFeedback);
+form.addEventListener('input', inputValidation);
 reasonField.addEventListener('change', selectUpdate)
 form.addEventListener('submit', submissionValidation);
