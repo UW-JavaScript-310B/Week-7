@@ -3,8 +3,93 @@
   <head>
     <title>Contact Me</title>
   </head>
-
+  
   <body>
-    <!-- TODO -->
-  </body>
+    <title>Contact Me TWO</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="contact-me.css" />
+    <form novalidate>
+      <p>
+        <label for="mail">
+          <span>Please enter an email address:</span>
+          <input type="email" id="mail" name="mail" required minlength="8" />
+          <span class="error" aria-live="polite"></span>
+        </label>
+      </p>
+      <div class="form-group">
+        <label for="first-name">First Name</label>
+        <input
+          id="first-name"
+          class="form-control validate-input"
+          type="text"
+          name="first-name"
+        />
+        <small class="error" aria-live="polite"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="last-name">Last Name</label>
+        <input
+          id="last-name"
+          class="form-control validate-input"
+          type="text"
+          name="last-name"
+        />
+        <small class="error" aria-live="polite"></small>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          class="form-control validate-input"
+          type="email"
+          name="email"
+          />
+          <button>Submit</button>
+        </form>
+        <script src="contact-me.js"></script>
+      </body>
 </html>
+
+<!--
+Name (text type)
+Email (type email)
+Reason for contacting (select type) with the following options:
+Job opportunity
+Talk code
+IF "Job opportunity" is selected, should show the following additional items:
+Job title (text type)
+Company website (url type)
+IF "Talk code" is selected, should show the following item:
+Coding language (type text or select, your choice)
+Message (textarea)
+Submit Button
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <body>
+      <title>Form Validation</title>
+      <form novalidate>
+        <p>
+          <label for="mail">
+            <span>Please enter an email address:</span>
+            <input type="email" id="mail" name="mail" required minlength="8" />
+            <span class="error" aria-live="polite"></span>
+          </label>
+        </p>
+        <button>Submit</button>
+      </form>
+    </body>
+  </head>
+</html>
+
+-->
