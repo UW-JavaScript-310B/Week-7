@@ -1,0 +1,20 @@
+.valid{
+    background-color: rgba(50, 205, 50, 0.30);
+    border: rgba(50, 205, 50, 0.30) solid 5px;
+}
+.invalid{
+    background-color: rgba(255, 0, 0, 0.30);
+    border: rgba(255, 0, 0, 0.30) solid 5px;
+
+}
+.followup-inactive{
+    display: none;
+}
+
+.followup-active{
+    display: block;
+}
+
+#job-title-input{
+    margin-bottom: 20px;
+}
