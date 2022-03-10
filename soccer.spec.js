@@ -13,9 +13,29 @@ describe("Test the Soccer Program", () => {
       expect(typeof response).toEqual("number");
     });
 
+    it("Should return 0 for three losses", () => {
+      const response = getTotalPoints("lll");
+      expect(response).toEqual(0);
+    });
+
     it("Should return 9 for three wins", () => {
       const response = getTotalPoints("www");
       expect(response).toEqual(9);
+    });
+
+    it("Should return 9 for three draws", () => {
+      const response = getTotalPoints("ddd");
+      expect(response).toEqual(3);
+    });
+
+    it("Should return 4 for one win, one loss and one draw", () => {
+      const response = getTotalPoints("wld");
+      expect(response).toEqual(4);
+    });
+
+    it("Should return 0 for empty string", () => {
+      const response = getTotalPoints("");
+      expect(response).toEqual(0);
     });
   });
 
@@ -47,28 +67,3 @@ describe("Test the Soccer Program", () => {
     });
   });
 });
-
-/*
-const RESULT_VALUES = {
-    w: 3,
-    d: 1,
-    l: 0
-  };
-  
-  // This function accepts one argument, the result, which should be a string
-  // Acceptable values are 'w', 'l', or 'd'
-  const getPointsFromResult = result => RESULT_VALUES[result];
-  
-
-  const getTotalPoints = resultsString => {
-    const results = resultsString.split('');
-  
-    let totalPoints = 0;
-    results.forEach(function(result) {
-      totalPoints += getPointsFromResult(result);
-    });
-  
-    return totalPoints;
-  };
-  
-  */
