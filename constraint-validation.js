@@ -15,6 +15,28 @@ const form = document.getElementById("connect-form")
 const selector = document.getElementById("contact-kind")
 
 
+
+const selectOption = () =>{
+    const selection = selector.value;
+    //const bizFields = document.getElementById('biz-name')
+
+    if (selection==="business"){
+        const bizFields = document.getElementById('biz-name')
+        bizFields.classList.remove('hidden')
+        //bizFields.classList.
+        //.show is presenting an error
+        //Uncaught TypeError: bizFields.classList.show is not a function
+        bizFields.classList.add('show')
+
+        //bizFields.classList.show('show')
+    } else{
+        const bizFields = document.getElementById('biz-name')
+        bizFields.classList.add('hidden')
+    }
+}
+
+
+
 const checkValidation = (e) =>{
 
     e.preventDefault()
@@ -66,3 +88,5 @@ const checkValidation = (e) =>{
 }
 
 form.addEventListener("submit", checkValidation)
+
+selector.addEventListener("change", selectOption)

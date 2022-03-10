@@ -4,3 +4,11 @@ input:invalid{
 input:valid{
     box-shadow: 2px 2px 5px blue;
 }
+.hidden{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
