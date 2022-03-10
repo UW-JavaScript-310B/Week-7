@@ -37,6 +37,13 @@ describe("Test the Soccer Program", () => {
       const response = getTotalPoints("");
       expect(response).toEqual(0);
     });
+
+    //Would be nice to implement this
+    // it("Should return 0 for empty string", () => {
+    //   const response = getTotalPoints(null);
+    //   expect(new Error()).toBeInstanceOf(Error);
+    //   //expect(response).toEqual(0);
+    // });
   });
 
   // create orderTeams function that accepts as many team objects as desired,
