@@ -1,10 +1,75 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Contact Me</title>
   </head>
 
   <body>
-    <!-- TODO -->
+    <form id="contact-me" action="">
+      <label for="name">Name</label>
+      <input
+        id="name"
+        name="name"
+      />
+      <label for="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+      />
+      <label for="reason">Reason</label>
+      <select id="reason">
+        <option>
+          Job opportunity
+        </option>
+        <option>
+          Talk code
+        </option>
+      </select>
+      <label for="job-title">Job Title</label>
+      <input
+        id="job-title"
+        name="job-title"
+      />
+      <label for="company-url">Company URL</label>
+      <input
+        id="company-url"
+      />
+      <label for="coding-language" class="invisible">Coding Language</label>
+      <input
+        id="coding-language"
+        name="coding-language"
+        class="invisible"
+      />
+      <label for="message">Message</label>
+      <textarea id="message"></textarea>
+      <button id="submit-btn">
+        Submit
+      </button>
+    </form>
+    <script src="contact-me.js"></script>
   </body>
+
 </html>
+
+<style>
+  #contact-me input, #contact-me select, #contact-me textarea, #contact-me button {
+    display: block;
+    margin-top: 0.38em;
+    margin-bottom: 1em;
+  }
+
+  #contact-me .visible {
+    display: block !important;
+  }
+
+  #contact-me .invisible {
+    display: none !important;
+  }
+
+  input:invalid, textarea:invalid {
+    border: 2px solid red;
+    box-shadow: 0px 0px 2px red;
+  }
+</style>
