@@ -1,8 +1,8 @@
 describe("Test the Soccer Program", () => {
+  // Create getTotalPoints function which accepts a string of results
+  // including wins, draws, and losses i.e. 'wwdlw'
+  // Returns total number of points won    it("Should return a number", () => {
   describe("Test getTotalPoints", () => {
-    // Create getTotalPoints function which accepts a string of results
-    // including wins, draws, and losses i.e. 'wwdlw'
-    // Returns total number of points won    it("Should return a number", () => {
     it("Should not be null", () => {
       const response = getTotalPoints("w");
       expect(response).not.toBeNull();
@@ -43,7 +43,6 @@ describe("Test the Soccer Program", () => {
   // each argument is a team object in the format { name, results }
   // i.e. {name: 'Sounders', results: 'wwlwdd'}
   // Logs each entry to the console as "Team name: points"
-
   describe("Test orderTeams", () => {
     const teamArray = [
       { name: "Manchester City", results: "wwl" },
