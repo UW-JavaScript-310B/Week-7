@@ -36,5 +36,6 @@ const orderTeams = (...teams) => {
       standingsString += '\n';
     }
   });
+  
   return standingsString;
 };
