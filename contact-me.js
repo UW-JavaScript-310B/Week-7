@@ -12,6 +12,7 @@ const message = document.getElementById("message");
 // Checks the contact form for valid inputs before submission.
 const checkValidation = (e) => {
     checkValidationName(e);
+    checkValidationEmail(e);
     checkValidationMessage(e);
 }
 
@@ -80,41 +81,51 @@ const checkValidationMessage = (e) => {
 // Toggles contact-me form field visibility depending on the user's reason for
 // contacting me.
 const reasonChange = (e) => {
-    // If reason is "Job opportunity..."
     if (reason.value === "Job opportunity") {
-        // Reveal job-title and its label.
-        jobTitle.classList.add("visible");
-        jobTitle.classList.remove("invisible");
-        jobTitle.previousElementSibling.classList.add("visible");
-        jobTitle.previousElementSibling.classList.remove("invisible");
-        // Reveal company-url and its label.
-        companyURL.classList.add("visible");
-        companyURL.classList.remove("invisible");
-        companyURL.previousElementSibling.classList.add("visible");
-        companyURL.previousElementSibling.classList.remove("invisible");
-        // Hide coding-language and its label.
-        codingLanguage.classList.add("invisible");
-        codingLanguage.classList.remove("visible");
-        codingLanguage.previousElementSibling.classList.add("invisible");
-        codingLanguage.previousElementSibling.classList.remove("visible");
+        reasonChangeJobOpportunity();
     }
-    // If reason is "Talk code..."
     if (reason.value === "Talk code") {
-        // Reveal coding-language and its label.
-        codingLanguage.classList.add("visible");
-        codingLanguage.classList.remove("invisible");
-        codingLanguage.previousElementSibling.classList.add("visible");
-        codingLanguage.previousElementSibling.classList.remove("invisible");
-        // Hide job-title, company-url, and their labels.
-        jobTitle.classList.add("invisible");
-        jobTitle.classList.remove("visible");
-        jobTitle.previousElementSibling.classList.add("invisible");
-        jobTitle.previousElementSibling.classList.remove("visible");
-        companyURL.classList.add("invisible");
-        companyURL.classList.remove("visible");
-        companyURL.previousElementSibling.classList.add("invisible");
-        companyURL.previousElementSibling.classList.remove("visible");
+        reasonChangeTalkCode();
     }
+}
+
+// reasonChangeJobOpportunity /////////////////////////////////////////////////
+// Toggles related fields when 'Reason' is set to 'Job opportunity'.
+const reasonChangeJobOpportunity = () => {
+    // Reveal job-title and its label.
+    jobTitle.classList.add("visible");
+    jobTitle.classList.remove("invisible");
+    jobTitle.previousElementSibling.classList.add("visible");
+    jobTitle.previousElementSibling.classList.remove("invisible");
+    // Reveal company-url and its label.
+    companyURL.classList.add("visible");
+    companyURL.classList.remove("invisible");
+    companyURL.previousElementSibling.classList.add("visible");
+    companyURL.previousElementSibling.classList.remove("invisible");
+    // Hide coding-language and its label.
+    codingLanguage.classList.add("invisible");
+    codingLanguage.classList.remove("visible");
+    codingLanguage.previousElementSibling.classList.add("invisible");
+    codingLanguage.previousElementSibling.classList.remove("visible");
+}
+
+// reasonChangeTalkCode ///////////////////////////////////////////////////////
+// Toggles related fields when 'Reason' is set to 'Talk code'.
+const reasonChangeTalkCode = () => {
+    // Reveal coding-language and its label.
+    codingLanguage.classList.add("visible");
+    codingLanguage.classList.remove("invisible");
+    codingLanguage.previousElementSibling.classList.add("visible");
+    codingLanguage.previousElementSibling.classList.remove("invisible");
+    // Hide job-title, company-url, and their labels.
+    jobTitle.classList.add("invisible");
+    jobTitle.classList.remove("visible");
+    jobTitle.previousElementSibling.classList.add("invisible");
+    jobTitle.previousElementSibling.classList.remove("visible");
+    companyURL.classList.add("invisible");
+    companyURL.classList.remove("visible");
+    companyURL.previousElementSibling.classList.add("invisible");
+    companyURL.previousElementSibling.classList.remove("visible");
 }
 
 ///////////////////////////////////////////////////////////////////////////////
