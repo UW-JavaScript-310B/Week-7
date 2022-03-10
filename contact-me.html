@@ -1,10 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Contact Me</title>
-  </head>
 
-  <body>
-    <!-- TODO -->
-  </body>
+<head>
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="contact-me.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Contact Me</h1>
+    <form id="connect-form" action="">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" class="form-control validate-input" type="text" name="name" />
+        <small class="error" aria-live="polite"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" class="form-control validate-input" type="text" name="email" />
+        <small class="error" aria-live="polite"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="kind">Reason for contacting us?</label>
+        <select class="form-control" name="kind" id="contact-kind">
+          <option value="choose" selected="selected" disabled>
+            Choose one
+          </option>
+          <option value="Job">Job opportunity</option>
+          <option value="Talk">Talk code</option>
+        </select>
+        <small class="error" aria-live="polite"></small>
+      </div>
+      <div class="form-group hidden" id="job-opp">
+        </ul><label for="">Job Title</label>
+        <ul>
+          <input type="text">
+        </ul><label for="">Company Website</label>
+        <ul>
+          <input type="url">
+      </div>
+      <div class="form-group hidden" id="talk-code">
+        <ul><label for="">Coding Language</label>
+          <select id="">
+            <option value="Choice" selected="selected" disabled>Choose Language</option>
+            <option value=".JS">JavaScript</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="Python">Python</option>
+          </select>
+        </ul>
+        <ul><label for="" id="message-box" class="">Message</label>
+          <textarea id="message" class="" name="message" rows="4" cols="50">
+        </textarea>
+        </ul>
+      </div>
+  </div>
+  </div>
+  <div class="form-group">
+    <input class="btn btn-primary" type="submit" value="Submit" />
+  </div>
+  </form>
+  </div>
+
+  <script src="contact-me.js"></script>
+</body>
+
+</html>
+
+</body>
+
 </html>

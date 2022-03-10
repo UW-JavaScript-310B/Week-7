@@ -8,10 +8,26 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="form-validation.css" />
+    <!-- <link rel="stylesheet" href="form-validation.css" /> -->
   </head>
 
   <body>
+    <style>
+      .hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+input:invalid {
+    box-shadow: 2px 2px 5px red;
+    }
+    input:valid {
+        box-shadow: 2px 2px 5px forestgreen;
+    }
+    </style>
     <div class="container">
       <h1>Connect With Us</h1>
       <form id="connect-form" action="">
