@@ -1,76 +1,112 @@
-// There are many ways to pick a DOM node; here we get the form itself and the email
-// input box, as well as the span element into which we will place the error message.
-const form = document.getElementsByTagName("form")[0];
-const firstName = document.getElementsById("first-name");
+// TODO
+const firstNameField = document.getElementById("first-name");
+const form = document.getElementById("connect-form");
+const selector = document.getElementById("contact-kind");
 
-const email = document.getElementById("mail");
-const emailError = document.querySelector("#mail + span.error");
+const selectOption = () => {
+  const selection = selector.value;
+  const jobFields = document.getElementById("job-title-info");
+  const techFields = document.getElementById("technology-info");
 
-firstName.addEventListener("input", checkFirstName());
-function checkFirstName(){
-      // Each time the user types something, we check if the
-  // form fields are valid.
+  //I wonder if there is a toggle method for this
+  if (selection === "opportunity") {
+    jobFields.classList.remove("hidden");
+    techFields.classList.remove("show");
+    jobFields.classList.add("show");
+    techFields.classList.add("hidden");
+  } else if (selection === "code") {
+    jobFields.classList.remove("show");
+    techFields.classList.remove("hidden");
+    jobFields.classList.add("hidden");
+    techFields.classList.add("show");
+  }
+};
 
-  if (firstName.validity.valid) {
-    // In case there is an error message visible, if the field
-    // is valid, we remove the error message.
-    emailError.textContent = ""; // Reset the content of the message
-    emailError.className = "error"; // Reset the visual state of the message
+selector.addEventListener("change", selectOption);
+
+/*
+
+IF "Job opportunity" is selected, should show the following additional items:
+Job title (text type)
+Company website (url type)
+IF "Talk code" is selected, should show the following item:
+Coding language (type text or select, your choice)
+
+
+
+const checkValidation = (e) => {
+  //debugger;
+  console.log(firstNameField.value.length);
+  const validState = firstNameField.value.length > 3;
+  const formGrp = firstNameField.parentElement;
+  firstNameField.setCustomValidity("");
+
+  console.log(firstNameField.parentElement);
+
+  if (!validState) {
+    e.preventDefault();
+    formGrp.classList.add("invalid");
+    formGrp.classList.remove("valid");
+    firstNameField.setCustomValidity(
+      "First name must be greater than 3 characters!"
+    );
+    firstNameField.validity.valid = false;
+    firstNameField.reportValidity;
   } else {
-    // If there is still an error, show the correct error
-    showError();
+    formGrp.classList.remove("invalid");
+    formGrp.classList.add("valid");
+    firstNameField.setCustomValidity("");
+    firstNameField.validity.valid = true;
+    firstNameField.reportValidity;
   }
-}
-email.addEventListener("input", function (event) {
-  // Each time the user types something, we check if the
-  // form fields are valid.
+};
 
-  if (email.validity.valid) {
-    // In case there is an error message visible, if the field
-    // is valid, we remove the error message.
-    emailError.textContent = ""; // Reset the content of the message
-    emailError.className = "error"; // Reset the visual state of the message
+form.addEventListener("submit", checkValidation);
+//TODO - there is an issue when we refresh the page. Need to investigate this
+*/
+
+/*
+const checkValidation = () => {
+  //debugger;
+  console.log(firstNameField.value.length);
+  const validState = firstNameField.value.length > 3;
+  const formGrp = firstNameField.parentElement;
+
+  console.log(firstNameField.parentElement);
+
+  if (!validState) {
+    formGrp.classList.add("invalid");
+    formGrp.classList.remove("valid");
+    firstNameField.validity.valid = false;
+    firstNameField.setCustomValidity(
+      "First name must be greater than 3 characters!"
+    );
+    firstNameField.reportValidity;
   } else {
-    // If there is still an error, show the correct error
-    showError();
-  }
-});
-
-form.addEventListener("submit", function (event) {
-
-if (!firstName.validity.valid){
-    showError();
-        // Then we prevent the form from being sent by canceling the event
-        event.preventDefault();
-}
-//   // if the email field is valid, we let the form submit
-
-//   if (!email.validity.valid) {
-//     // If it isn't, we display an appropriate error message
-//     showError();
-//     // Then we prevent the form from being sent by canceling the event
-//     event.preventDefault();
-//   }
-});
-
-function showError() {
-    if (email.validity.valueMissing) {
-        // If the field is empty,
-        // display the following error message.
-if (email.validity.valueMissing) {
-    // If the field is empty,
-    // display the following error message.
-    emailError.textContent = "You need to enter an e-mail address.";
-  } else if (email.validity.typeMismatch) {
-    // If the field doesn't contain an email address,
-    // display the following error message.
-    emailError.textContent = "Entered value needs to be an e-mail address.";
-  } else if (email.validity.tooShort) {
-    // If the data is too short,
-    // display the following error message.
-    emailError.textContent = `Email should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
+    formGrp.classList.remove("invalid");
+    formGrp.classList.add("valid");
+    firstNameField.validity.valid = true;
+    firstNameField.setCustomValidity("");
+    firstNameField.reportValidity;
   }
 
-  // Set the styling appropriately
-  emailError.className = "error active";
-}
+  console.log(validState);
+  return validState;
+};
+
+/*
+    if (!validFirstName) {
+        console.log("Bad Input");
+        parentDivFirstName.classList.remove("valid");
+        parentDivFirstName.classList.add("invalid");
+        firstName.setCustomValidity("Your first name must include at least 3 characters");
+        firstName.validity.valid = false;
+        firstName.reportValidity();
+    } else {
+        parentDivFirstName.classList.remove("invalid");
+        parentDivFirstName.classList.add("valid");
+        firstName.setCustomValidity("");
+        firstName.validity.valid = true;
+        firstName.reportValidity();
+    }
+    */
