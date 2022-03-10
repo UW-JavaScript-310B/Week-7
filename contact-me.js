@@ -12,16 +12,19 @@ const selectOption = (e) =>{
     const selection = selector.value;
 
     if (selection==="job-opportunity"){
+        //e.preventDefault()
         const jobFields = document.getElementById('jobs')
-        //const codeFields = document.getElementById('codes')
-        //codeFields.classList.add('hidden')
+        const codeFields = document.getElementById('codes')
+        codeFields.classList.add('hidden')
+        codeFields.classList.remove('show')
         jobFields.classList.remove('hidden')
         jobFields.classList.add('show')
 
-    } else{
+    } else if (selection==="talk-code"){
         const codeFields = document.getElementById('codes')
         const jobFields = document.getElementById('jobs')
         jobFields.classList.add('hidden')
+        jobFields.classList.remove('show')
         codeFields.classList.remove('hidden')
         codeFields.classList.add('show')
     }
