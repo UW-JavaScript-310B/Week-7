@@ -1,4 +1,3 @@
-// TODO
 
 const nameField = document.getElementById("first-name")
 
