@@ -12,15 +12,15 @@ const selectOption = (e) => {
     const bizFields2 = document.getElementById('biz-name2');
 
     if (selection === 'job') {
-        bizFields.classList.toggle('show');
-        bizFields.classList.toggle('hidden');
+        bizFields.classList.add('show');
+        bizFields.classList.remove('hidden');
         bizFields2.classList.remove('show');
-        bizFields2.classList.remove('hidden');
+        bizFields2.classList.add('hidden');
     } else if (selection === 'talk') {
         bizFields.classList.remove('show');
-        bizFields.classList.remove('hidden');
-        bizFields2.classList.toggle('show');
-        bizFields2.classList.toggle('hidden');
+        bizFields.classList.add('hidden');
+        bizFields2.classList.add('show');
+        bizFields2.classList.remove('hidden');
     }
 }
 
