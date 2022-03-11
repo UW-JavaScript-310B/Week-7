@@ -22,9 +22,9 @@ function validateFirstName(e) {
     e.preventDefault();
     formGrp.classList.add("invalid");
     formGrp.classList.remove("valid");
-    firstNameField.setCustomValidity(
-      "First name must be greater than 3 characters!"
-    );
+    errorString = "First name must be greater than 3 characters!";
+    firstNameField.setCustomValidity(errorString);
+    console.log(errorString);
     firstNameField.validity.valid = false;
     firstNameField.reportValidity;
   }
@@ -45,9 +45,9 @@ function validateLastName(e) {
     e.preventDefault();
     formGrp.classList.add("invalid");
     formGrp.classList.remove("valid");
-    lastNameField.setCustomValidity(
-      "Last name must be greater than 3 characters!"
-    );
+    errorString = "Last name must be greater than 3 characters!";
+    lastNameField.setCustomValidity(errorString);
+    console.log(errorString);
     lastNameField.validity.valid = false;
     lastNameField.reportValidity;
   }
@@ -69,7 +69,9 @@ function validateTestEmail(e) {
     e.preventDefault();
     formGrp.classList.add("invalid");
     formGrp.classList.remove("valid");
+    errorString = "Please enter a valid email address.";
     emailField.setCustomValidity("Please enter a valid email address.");
+    console.log(errorString);
     emailField.validity.valid = false;
     emailField.reportValidity();
   }
