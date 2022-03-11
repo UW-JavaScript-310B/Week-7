@@ -4,3 +4,10 @@ input:invalid {
 input:valid {
   box-shadow: 2px 2px 5px green;
 }
+body {
+  background-color: gray;
+}
+
+form {
+  background-color: gray;
+}
