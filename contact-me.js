@@ -23,12 +23,18 @@ function selectOption() {
     techFields.classList.add("show");
   }
 
-  const tempValue = document.getElementById("job-title-info").classList;
-  //console.log(tempValue);
-  tempValue.forEach((element) => {
+  //not the most elegant way, but I think this will work
+  jobFields.classList.forEach((element) => {
     //console.log(element);
     if (element === "show") {
-      console.log("yup");
+      console.log("yup job fields");
+    }
+  });
+
+  techFields.classList.forEach((element) => {
+    //console.log(element);
+    if (element === "show") {
+      console.log("yup tech fields");
     }
   });
 }
