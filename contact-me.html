@@ -19,7 +19,7 @@
           <label for="first-name">First Name</label>
           <input
             id="first-name"
-            class="form-control validate-input"
+            class="form-control validate-input highlightme"
             type="text"
             name="first-name"
           />
@@ -30,7 +30,7 @@
           <label for="last-name">Last Name</label>
           <input
             id="last-name"
-            class="form-control validate-input"
+            class="form-control validate-input highlightme"
             type="text"
             name="last-name"
           />
@@ -50,7 +50,7 @@
 
         <div class="form-group">
           <label for="kind">Reason for contacting?</label>
-          <select class="form-control" name="kind" id="contact-kind">
+          <select class="form-control highlightme" name="kind" id="contact-kind">
             <option value="choose" selected="selected" disabled>
               Choose one
             </option>
@@ -71,26 +71,22 @@
           <label for="language">Coding language</label>
           <input type="text" id="language" />
         </div>
-
-        <textarea id="nbmessage" name="message" rows="5" cols="33"></textarea>
-
         <div class="form-group">
-          <div id="message">
-            <label for="message"
-              >Message
-              <textarea
-                id="messageText"
-                rows="10"
-                cols="60"
-                name="message"
-                id="message"
-                class="highlightme"
-                oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
-              >
-              </textarea>
-            </label>
-          </div>
-          <input class="btn btn-primary" type="submit" value="Sign up" />
+          <label for="message"
+            >Comments
+            <textarea
+              id="messageText"
+              name="message"
+              rows="10"
+              cols="60"
+              name="message"
+              id="message"
+              class="highlightme"
+              oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+            ></textarea>
+          </label>
+        </div>
+          <input class="btn btn-primary" type="submit" value="Submit" />
         </div>
       </form>
     </div>
