@@ -22,6 +22,15 @@ function selectOption() {
     jobFields.classList.add("hidden");
     techFields.classList.add("show");
   }
+
+  const tempValue = document.getElementById("job-title-info").classList;
+  //console.log(tempValue);
+  tempValue.forEach((element) => {
+    //console.log(element);
+    if (element === "show") {
+      console.log("yup");
+    }
+  });
 }
 
 function checkValidation(e) {
@@ -35,7 +44,6 @@ function validateMessage(e) {
   const messageText = document.getElementById("messageText");
   const formGrp = messageText.parentElement;
 
-  console.log(messageText.value.length);
   const validState = messageText.value.length >= 10;
   messageText.setCustomValidity("");
 
@@ -47,7 +55,6 @@ function validateMessage(e) {
     messageText.validity.valid = true;
     messageText.reportValidity;
   } else {
-    //e.preventDefault();
     formGrp.classList.add("invalid");
     messageText.classList.add("highlightme");
     formGrp.classList.remove("valid");
@@ -72,7 +79,6 @@ function validateFirstName(e) {
     firstNameField.validity.valid = true;
     firstNameField.reportValidity;
   } else {
-    //e.preventDefault();
     formGrp.classList.add("invalid");
     firstNameField.classList.add("highlightme");
     formGrp.classList.remove("valid");
@@ -97,7 +103,6 @@ function validateLastName(e) {
     lastNameField.validity.valid = true;
     lastNameField.reportValidity;
   } else {
-    //e.preventDefault();
     formGrp.classList.add("invalid");
     lastNameField.classList.add("highlightme");
     formGrp.classList.remove("valid");
@@ -123,7 +128,6 @@ function validateEmail(e) {
     emailField.validity.valid = true;
     emailField.reportValidity();
   } else {
-    //e.preventDefault();
     formGrp.classList.add("invalid");
     emailField.classList.add("highlightme");
     formGrp.classList.remove("valid");
