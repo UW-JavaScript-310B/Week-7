@@ -1,14 +1,15 @@
-// TODO
-const firstNameField = document.getElementById("first-name");
-const form = document.getElementById("connect-form");
+const form = document.getElementById("contact-me-form");
 const selector = document.getElementById("contact-kind");
 
-const selectOption = () => {
+selector.addEventListener("change", selectOption);
+form.addEventListener("click", checkValidation);
+//Try adding event listner for submit button that checks the state of the form
+
+function selectOption() {
   const selection = selector.value;
   const jobFields = document.getElementById("job-title-info");
   const techFields = document.getElementById("technology-info");
 
-  //I wonder if there is a toggle method for this
   if (selection === "opportunity") {
     jobFields.classList.remove("hidden");
     techFields.classList.remove("show");
@@ -20,93 +21,133 @@ const selectOption = () => {
     jobFields.classList.add("hidden");
     techFields.classList.add("show");
   }
-};
+}
 
-selector.addEventListener("change", selectOption);
-
-/*
-
-IF "Job opportunity" is selected, should show the following additional items:
-Job title (text type)
-Company website (url type)
-IF "Talk code" is selected, should show the following item:
-Coding language (type text or select, your choice)
-
-
-
-const checkValidation = (e) => {
+function checkValidation(e) {
   //debugger;
-  console.log(firstNameField.value.length);
-  const validState = firstNameField.value.length > 3;
-  const formGrp = firstNameField.parentElement;
-  firstNameField.setCustomValidity("");
+  validateFirstName(e);
+  validateLastName(e);
+  validateEmail(e);
+  //validateMessage(e);
+}
 
-  console.log(firstNameField.parentElement);
+function validateName(e) {
+  const userName = document.getElementById("userName");
+  console.log(userName.value.length);
+  const validState = userName.value.length > 3;
+  const formGrp = userName.parentElement;
+  userName.setCustomValidity("");
+
+  console.log(userName.parentElement);
 
   if (!validState) {
-    e.preventDefault();
+    //e.preventDefault();
     formGrp.classList.add("invalid");
     formGrp.classList.remove("valid");
-    firstNameField.setCustomValidity(
-      "First name must be greater than 3 characters!"
-    );
-    firstNameField.validity.valid = false;
-    firstNameField.reportValidity;
+    userName.setCustomValidity("Name must be greater than 3 characters.");
+    userName.validity.valid = false;
+    userName.reportValidity;
   } else {
     formGrp.classList.remove("invalid");
     formGrp.classList.add("valid");
-    firstNameField.setCustomValidity("");
-    firstNameField.validity.valid = true;
-    firstNameField.reportValidity;
+    userName.setCustomValidity("");
+    userName.validity.valid = true;
+    userName.reportValidity;
   }
-};
+}
 
-form.addEventListener("submit", checkValidation);
-//TODO - there is an issue when we refresh the page. Need to investigate this
-*/
+function validateMessage(e) {
+  const messageText = document.getElementById("messageText");
+  console.log(messageText);
+  //console.log(messageText.value.length);
+  const validState = messageText.value.length > 10;
+  const formGrp = messageText.parentElement;
+  userName.setCustomValidity("");
 
-/*
-const checkValidation = () => {
-  //debugger;
-  console.log(firstNameField.value.length);
-  const validState = firstNameField.value.length > 3;
-  const formGrp = firstNameField.parentElement;
-
-  console.log(firstNameField.parentElement);
+  console.log(message.parentElement);
 
   if (!validState) {
+    //e.preventDefault();
     formGrp.classList.add("invalid");
     formGrp.classList.remove("valid");
-    firstNameField.validity.valid = false;
-    firstNameField.setCustomValidity(
-      "First name must be greater than 3 characters!"
-    );
-    firstNameField.reportValidity;
+    messageText.setCustomValidity("Name must be greater than 10 characters.");
+    messageText.validity.valid = false;
+    messageText.reportValidity;
   } else {
     formGrp.classList.remove("invalid");
     formGrp.classList.add("valid");
-    firstNameField.validity.valid = true;
+    messageText.setCustomValidity("");
+    messageText.validity.valid = true;
+    messageText.reportValidity;
+  }
+}
+
+function validateFirstName(e) {
+  const firstNameField = document.getElementById("first-name");
+  const formGrp = firstNameField.parentElement;
+  const validState = firstNameField.value.length > 3;
+
+  if (validState) {
+    formGrp.classList.add("valid");
+    formGrp.classList.remove("invalid");
     firstNameField.setCustomValidity("");
+    firstNameField.validity.valid = true;
+    firstNameField.reportValidity;
+  } else {
+    //e.preventDefault();
+    formGrp.classList.add("invalid");
+    formGrp.classList.remove("valid");
+    errorString = "First name must be greater than 3 characters!";
+    firstNameField.setCustomValidity(errorString);
+    console.log(errorString);
+    firstNameField.validity.valid = false;
     firstNameField.reportValidity;
   }
+}
 
-  console.log(validState);
-  return validState;
-};
+function validateLastName(e) {
+  const lastNameField = document.getElementById("last-name");
+  const formGrp = lastNameField.parentElement;
+  const validState = lastNameField.value.length > 3;
 
-/*
-    if (!validFirstName) {
-        console.log("Bad Input");
-        parentDivFirstName.classList.remove("valid");
-        parentDivFirstName.classList.add("invalid");
-        firstName.setCustomValidity("Your first name must include at least 3 characters");
-        firstName.validity.valid = false;
-        firstName.reportValidity();
-    } else {
-        parentDivFirstName.classList.remove("invalid");
-        parentDivFirstName.classList.add("valid");
-        firstName.setCustomValidity("");
-        firstName.validity.valid = true;
-        firstName.reportValidity();
-    }
-    */
+  if (validState) {
+    formGrp.classList.add("valid");
+    formGrp.classList.remove("invalid");
+    lastNameField.setCustomValidity("");
+    lastNameField.validity.valid = true;
+    lastNameField.reportValidity;
+  } else {
+    //e.preventDefault();
+    formGrp.classList.add("invalid");
+    formGrp.classList.remove("valid");
+    errorString = "Last name must be greater than 3 characters!";
+    lastNameField.setCustomValidity(errorString);
+    console.log(errorString);
+    lastNameField.validity.valid = false;
+    lastNameField.reportValidity;
+  }
+}
+
+function validateEmail(e) {
+  const emailField = document.getElementById("email");
+  const formGrp = emailField.parentElement;
+  const regEx = new RegExp("\\w+@\\w+\\.\\w+");
+  const isEmailValid = regEx.test(emailField.value);
+
+  if (isEmailValid) {
+    formGrp.classList.add("valid");
+    formGrp.classList.remove("invalid");
+    emailField.setCustomValidity(" ");
+    emailField.validity.valid = true;
+    emailField.reportValidity();
+  } else {
+    //e.preventDefault();
+    formGrp.classList.add("invalid");
+    formGrp.classList.remove("valid");
+    errorString = "Please enter a valid email address.";
+    emailField.setCustomValidity("Please enter a valid email address.");
+    console.log(errorString);
+    emailField.validity.valid = false;
+    emailField.reportValidity();
+  }
+}
