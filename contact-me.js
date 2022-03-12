@@ -4,39 +4,71 @@ const selector = document.getElementById("contact-kind");
 
 selector.addEventListener("change", selectOption);
 submitButton.addEventListener("click", checkValidation);
-//Try adding event listner for submit button that checks the state of the form
 
+//Try adding event listner for submit button that checks the state of the form
 function selectOption() {
   const selection = selector.value;
-  const jobFields = document.getElementById("job-title-info");
-  const techFields = document.getElementById("technology-info");
+  const techFields = document.getElementById("coding-language");
+  const jobFields = document.getElementById("job-info");
 
   if (selection === "opportunity") {
+    jobFields.classList.add("show");
     jobFields.classList.remove("hidden");
     techFields.classList.remove("show");
-    jobFields.classList.add("show");
     techFields.classList.add("hidden");
   } else if (selection === "code") {
-    jobFields.classList.remove("show");
+    techFields.classList.add("show");
     techFields.classList.remove("hidden");
     jobFields.classList.add("hidden");
-    techFields.classList.add("show");
+    jobFields.classList.remove("show");
   }
+  console.log(selection);
 
   //not the most elegant way, but I think this will work
   jobFields.classList.forEach((element) => {
-    //console.log(element);
     if (element === "show") {
-      console.log("yup job fields");
+      validateJobTitle();
+      validateCompanyWebsite();
     }
   });
 
   techFields.classList.forEach((element) => {
-    //console.log(element);
     if (element === "show") {
-      console.log("yup tech fields");
+      validateTechFields();
     }
   });
+}
+
+/*
+1. If "Job opportunity" is selected, validate the following and show messages if invalid (1 point):
+Job Title is present
+Company website is present and url is valid (regex) /https?\:\/\/.+\..+/ (or use constraint validation api)
+2. If "Talk code" is selected (1 point):
+Coding language should be a <select> (dropdown) containing 3 or more coding languages as options (i.e. HTML, CSS, JavaScript).  The initially selected option should be "Choose One"
+Validate that this field (coding language) is changed to one of the coding languages, and show a message if invalid
+*/
+
+function validateJobFields() {
+  console.log("yup job fields");
+}
+function validateTechFields() {
+  console.log("yup tech fields");
+  const selection = selector.value;
+  const techFields = document.getElementById("coding-language");
+  console.log(selection);
+  if (selection === "opportunity") {
+    techFields.classList.remove("show");
+    techFields.classList.add("hidden");
+  } else if (selection === "code") {
+    techFields.classList.remove("hidden");
+  }
+}
+function validateJobTitle() {
+  console.log("validateJobTitle placeholder");
+}
+
+function validateCompanyWebsite() {
+  console.log("validateJobTitle placeholder");
 }
 
 function checkValidation(e) {
