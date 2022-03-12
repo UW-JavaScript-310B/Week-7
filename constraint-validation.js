@@ -38,7 +38,6 @@ function validateFirstName(e) {
   const firstNameField = document.getElementById("first-name");
   const formGrp = firstNameField.parentElement;
   const validState = firstNameField.value.length > 3;
-  console.log(`first name length ${firstNameField.value.length}`);
 
   if (validState) {
     formGrp.classList.add("valid");
@@ -62,7 +61,6 @@ function validateLastName(e) {
   const lastNameField = document.getElementById("last-name");
   const formGrp = lastNameField.parentElement;
   const validState = lastNameField.value.length > 3;
-  console.log(`last name length ${lastNameField.value.length}`);
 
   if (validState) {
     formGrp.classList.add("valid");
