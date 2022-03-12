@@ -83,7 +83,7 @@ function validateLastName(e) {
 function validateEmail(e) {
   const emailField = document.getElementById("email");
   const formGrp = emailField.parentElement;
-  const regEx = new RegExp("\\w+@\\w+.\\w+");
+  const regEx = new RegExp("\\w+@\\w+\\.\\w+");
   const isEmailValid = regEx.test(emailField.value);
 
   if (isEmailValid) {
