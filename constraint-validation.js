@@ -31,7 +31,7 @@ function checkValidation(e) {
   //debugger;
   validateFirstName(e);
   validateLastName(e);
-  validateTestEmail(e);
+  validateEmail(e);
 }
 
 function validateFirstName(e) {
@@ -80,7 +80,7 @@ function validateLastName(e) {
   }
 }
 
-function validateTestEmail(e) {
+function validateEmail(e) {
   const emailField = document.getElementById("email");
   const formGrp = emailField.parentElement;
   const regEx = new RegExp("\\w+@\\w+.\\w+");
