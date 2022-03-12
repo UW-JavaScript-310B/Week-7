@@ -37,7 +37,7 @@ function checkValidation(e) {
 function validateFirstName(e) {
   const firstNameField = document.getElementById("first-name");
   const formGrp = firstNameField.parentElement;
-  const validState = firstNameField.value.length > 3;
+  const validState = firstNameField.value.length >= 3;
 
   if (validState) {
     formGrp.classList.add("valid");
@@ -49,7 +49,7 @@ function validateFirstName(e) {
     //e.preventDefault();
     formGrp.classList.add("invalid");
     formGrp.classList.remove("valid");
-    errorString = "First name must be greater than 3 characters!";
+    errorString = "First name must be 3 or more characters!";
     firstNameField.setCustomValidity(errorString);
     console.log(errorString);
     firstNameField.validity.valid = false;
@@ -60,7 +60,7 @@ function validateFirstName(e) {
 function validateLastName(e) {
   const lastNameField = document.getElementById("last-name");
   const formGrp = lastNameField.parentElement;
-  const validState = lastNameField.value.length > 3;
+  const validState = lastNameField.value.length >= 3;
 
   if (validState) {
     formGrp.classList.add("valid");
@@ -72,7 +72,7 @@ function validateLastName(e) {
     //e.preventDefault();
     formGrp.classList.add("invalid");
     formGrp.classList.remove("valid");
-    errorString = "Last name must be greater than 3 characters!";
+    errorString = "Last name must be 3 or more characters!";
     lastNameField.setCustomValidity(errorString);
     console.log(errorString);
     lastNameField.validity.valid = false;
