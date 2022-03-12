@@ -1,6 +1,7 @@
 input:invalid {
   box-shadow: 2px 2px 5px orangered;
 }
+
 input:valid {
   box-shadow: 2px 2px 5px green;
 }
@@ -11,4 +12,12 @@ body {
 
 form {
   background-color: gray;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
 }
