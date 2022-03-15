@@ -22,7 +22,6 @@
             class="form-control validate-input"
             type="text"
             name="first-name"
-            
           />
           <small class="error" aria-live="polite"></small>
         </div>
@@ -34,7 +33,6 @@
             class="form-control validate-input"
             type="text"
             name="last-name"
-            
           />
           <small class="error" aria-live="polite"></small>
         </div>
@@ -62,6 +60,16 @@
           <small class="error" aria-live="polite"></small>
         </div>
 
+        <div id="biz-name" class="form-group hidden">
+          <label for="">Business Info</label>
+          <input type="text" />
+        </div>
+
+        <div id="tech-type" class="form-group hidden">
+          <label for="">Technical Software</label>
+          <input type="text" />
+        </div>
+
         <div class="form-check mb-3">
           <input
             class="form-check-input"
@@ -75,7 +83,7 @@
 
         <div class="form-group">
           <label for="doge">How much DogeCoin u donate me?</label>
-          <input type="number" id="doge" min=20>
+          <input type="number" id="doge" min="20" />
         </div>
 
         <div class="form-group">
