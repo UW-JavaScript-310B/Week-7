@@ -8,22 +8,27 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="form-validation.css" />
+    <!-- <link rel="stylesheet" href="form-validation.css" /> -->
+    <link rel="stylesheet" href="constraint-validation.css" />
   </head>
 
   <body>
     <div class="container">
       <h1>Connect With Us</h1>
+
       <form id="connect-form" action="">
+
         <div class="form-group">
+          
           <label for="first-name">First Name</label>
+
           <input
             id="first-name"
             class="form-control validate-input"
             type="text"
-            name="first-name"
-            
+            name="first-name"           
           />
+
           <small class="error" aria-live="polite"></small>
         </div>
 
@@ -59,7 +64,9 @@
             <option value="business">I'm interested in your software</option>
             <option value="technical">I need technical support</option>
           </select>
+
           <small class="error" aria-live="polite"></small>
+
         </div>
 
         <div class="form-check mb-3">
@@ -84,6 +91,11 @@
       </form>
     </div>
 
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
     <script src="form-validation-custom.js"></script>
+
   </body>
 </html>
