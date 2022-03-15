@@ -22,6 +22,7 @@
             class="form-control validate-input"
             type="text"
             name="first-name"
+
             
           />
           <small class="error" aria-live="polite"></small>
@@ -34,6 +35,7 @@
             class="form-control validate-input"
             type="text"
             name="last-name"
+
             
           />
           <small class="error" aria-live="polite"></small>
@@ -46,6 +48,7 @@
             class="form-control validate-input"
             type="email"
             name="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           />
           <small class="error" aria-live="polite"></small>
         </div>
@@ -61,6 +64,12 @@
           </select>
           <small class="error" aria-live="polite"></small>
         </div>
+
+        <div class="form-group hidden" id="biz-name">
+          <label for=""></label>
+          <input type="text">
+        </div>
+
 
         <div class="form-check mb-3">
           <input
