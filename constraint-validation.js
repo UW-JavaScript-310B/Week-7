@@ -41,50 +41,7 @@ const selectOption = () =>{
 const checkValidation = (e) =>{
 
     e.preventDefault()
-    //debugger
-    const validState = nameField.value.length >3
 
-    const validStateLast = lastField.value.length > 3
-
-    // const validStateEmail = emailField.value.match("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$")
-    //
-    // console.log(validStateEmail)
-
-
-    if (!validState) {
-
-        e.preventDefault()
-        nameField.setCustomValidity("Your first name must be more than three letters")
-        nameField.closest(".form-group").classList.remove('valid')
-        nameField.closest(".form-group").classList.add('invalid')
-        console.log('Bad NAME Input')
-    }
-
-
-    else {
-        nameField.validity.valid = true
-        nameField.closest(".form-group").classList.remove('invalid')
-        nameField.closest(".form-group").classList.add('valid')
-    }
-
-    //console.log(nameField.value)
-
-    if (!validStateLast){
-
-        e.preventDefault()
-        lastField.setCustomValidity("Your last name must be more than three letters")
-        lastField.closest(".form-group").classList.remove('valid')
-        lastField.closest(".form-group").classList.add('invalid')
-        console.log('Bad LAST NAME Input')
-
-    }
-
-    else{
-        lastField.validity.valid = true
-        lastField.closest(".form-group").classList.remove('invalid')
-        lastField.closest(".form-group").classList.add('valid')
-
-    }
 
 }
 
