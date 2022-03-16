@@ -1,12 +1,13 @@
 // TODO
 // TODO
 const nameField = document.getElementById("first-name");
+const nameFieldLastname = document.getElementById("last-name");
 const form = document.getElementById("connect-form")
 
 
 const checkValidation = (e) => {
     
-    const validState = nameField.value.length > 3
+    const validState = (nameField.value.length > 3)
 
     if (!validState) {
         e.preventDefault()
