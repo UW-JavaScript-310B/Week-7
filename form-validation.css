@@ -1,0 +1,7 @@
+.invalid {
+    box-shadow: 2px 2px 5px orangered;
+    border: 2px solid orangered;
+}
+.valid {
+    border: 1px solid forestgreen;
+}
