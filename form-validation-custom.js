@@ -1,15 +1,15 @@
 function setInvalid(field)
 {
-    let nearestDiv = field.closest('div.form-group')
-    nearestDiv.classList.remove('valid')
-    nearestDiv.classList.add('invalid')
+    let nearestDiv = field.parentElement
+    field.classList.remove('valid')
+    field.classList.add('invalid')
 }
 
 function setValid(field)
 {
-    let nearestDiv = field.closest('div.form-group')
-    nearestDiv.classList.remove('invalid')
-    nearestDiv.classList.add('valid')
+    let nearestDiv = field.parentElement
+    field.classList.remove('invalid')
+    field.classList.add('valid')
 }
 
 function validateTextFieldLength(field, minLength)
@@ -25,18 +25,18 @@ function validateTextFieldPattern(field, pattern)
 
 function checkName(field, nameType)
 {
+    let small = field.nextElementSibling
     result = true
     if (!validateTextFieldLength(field, 4))
     {
-        field.setCustomValidity(`${nameType} Name must be more than 3 letters`)
-        field.reportValidity()
         setInvalid(field);
         console.log(`Bad Input: ${field.value}`)
+        small.innerText = `${nameType} Name must be more than 3 letters`
         result = false
     }
     else
     {
-        field.validity.valid = true
+        small.innerText = ''
         setValid(field)
     }
 
@@ -45,21 +45,20 @@ function checkName(field, nameType)
 
 function checkEmail(field, pattern)
 {
+    let small = field.nextElementSibling
     result = true
     if (!validateTextFieldPattern(field, pattern))
     {
-        field.setCustomValidity(`Email needs to be of the form xxx@yyy.zzz`)
-        field.reportValidity()
         setInvalid(field);
         console.log(`Bad Input: ${field.value}`)
+        small.innerText = `Email needs to be of the form xxx@yyy.zzz`
         result = false
     }
     else
     {
-        field.validity.valid = true
+        small.innerText = ''
         setValid(field)
     }
-
     return result
 }
 
