@@ -6,9 +6,9 @@
     display: block;
 }
 
-input:invalid {
+.invalid {
     box-shadow: 2px 2px 5px orangered;
 }
-input:valid {
+.valid {
     border: 1px solid forestgreen;
 }
