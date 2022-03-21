@@ -69,12 +69,15 @@
         
         <div class="form-group hidden" id="biz-name2">
           <label for="talk">Coding Language</label>
-          <input
-            id="talk"
-            class="form-control validate-input"
-            type="text"
-            name="talk"
-          />
+          <select class="form-control" name="kind" id="contact-kind2">
+            <option value="choose" selected="selected" disabled>
+              (Choose one)
+            </option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="js">Javascript</option>
+          </select>
+          <small class="error" aria-live="polite"></small>
         </div>
 
         <div class="form-group">
