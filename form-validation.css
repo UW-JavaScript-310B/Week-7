@@ -1,0 +1,23 @@
+
+body {
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+.invalid {
+    font-style: italic;
+    color: red;
+    text-underline-offset:20px
+}
+
+.error-message {
+    
+    display: none;
+    flex-direction: column;
+    font-style: italic;
+    font-weight: 600;
+    border-color: red;
+    border-style: solid;
+    padding: 10px;
+}
