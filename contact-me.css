@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 200px;
+    padding-right: 200px;
+    
+}
+
+.invalid {
+    font-style: italic;
+    color: red;
+    text-underline-offset:20px
+}
+
+.error-message {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    font-style: italic;
+    font-weight: 600;
+    border-color: red;
+    border-style: solid;
+    padding: 10px;
+}
+
+.job-title{
+    
+    display: none;
+    flex-direction: column;
+}
+
+.website {
+    display: none;
+    align-content: center;
+    flex-direction: column;
+}
+
+
+
+
+#contact-kind {
+display: flex;
+text-align: center;
+
+}
+
+
