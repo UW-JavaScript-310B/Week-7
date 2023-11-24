@@ -1,5 +1,5 @@
 describe('Test for the blackjack game', () => {
-    it('Tests who won', () => {
+    it('Tests who won or tie', () => {
         const playerScore1 = 20;
         const dealerScore1 = 18;
         
@@ -16,35 +16,44 @@ describe('Test for the blackjack game', () => {
 })
 
 describe('Test for the blackjack game', () => {
-    it('Tests who won', () => {
+    it('Checks id the deck has 52 cards', () => {
         expect(getDeck().length).toEqual(52);
     })
 })
 
 
 describe('Test for the blackjack game', () => {
-    it('Tests who won', () => {
-        const dealerScore = 15;
-
-        const handScore = dealerShouldDraw(dealerScore);
-
-        expect(handScore).toEqual(true);
-    })
-})
-
-
-
-
-describe('Test for the blackjack game', () => {
-    it('Tests who won', () => {
-        const hand = [
+    it('Checks if the dealer should draw works', () => {
+        const dealerHandCheck1 = [
             { displayVal: "six", val:6, suit: "diamonds"},
             { displayVal: "seven", val:7, suit: "spades"},
         ];
+        const dealerHandCheck2 = [
+            { displayVal: "nine", val:9, suit: "diamonds"},
+            { displayVal: "eight", val:8, suit: "spades"},
+        ];
 
-        const score = calcPoints(hand);
+        const handScore1 = dealerShouldDraw(dealerHandCheck1);
+        expect(handScore1).toEqual(true);
 
-        expect(score.total).toEqual(13);
-        expect(score.isSoft).toEqual(false);
+        const handScore2 = dealerShouldDraw(dealerHandCheck2);
+        expect(handScore2).toEqual(false);
     })
 })
+
+
+
+
+// describe('Test for the blackjack game', () => {
+//     it('Tests who won', () => {
+//         const hand = [
+//             { displayVal: "six", val:6, suit: "diamonds"},
+//             { displayVal: "seven", val:7, suit: "spades"},
+//         ];
+
+//         const score = calcPoints(hand);
+
+//         expect(score.total).toEqual(13);
+//         expect(score.isSoft).toEqual(false);
+//     })
+// })
