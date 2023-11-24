@@ -1,5 +1,5 @@
 describe('Test for the soccer score', () => {
-    it('Card number', () => {
+    it('Testing result and letter to number convertion', () => {
         const result = 'wdldwl';
         const wNumber = result[0];
 
