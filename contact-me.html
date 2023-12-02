@@ -8,7 +8,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="form-validation.css" />
+    <link rel="stylesheet" href="contact-me.css" />
   </head>
 
   <body>
@@ -22,6 +22,7 @@
             class="form-control validate-input"
             type="text"
             name="first-name"
+            placeholder="Name must be 3 or characters"
             
           />
           <small class="error" aria-live="polite"></small>
@@ -34,6 +35,7 @@
             class="form-control validate-input"
             type="email"
             name="email"
+            
           />
           <small class="error" aria-live="polite"></small>
         </div>
@@ -50,7 +52,61 @@
           <small class="error" aria-live="polite"></small>
         </div>
 
-        <div class="form-check mb-3">
+        <div class="form-group hidden">
+          <label for="job-title">Job title</label>
+          <input
+            id="job-title"
+            class="form-control validate-input"
+            type="text"
+            name="job-title"
+            
+          />
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="form-group hidden">
+          <label for="company-website">Company website</label>
+          <input
+            id="company-website"
+            class="form-control validate-input"
+            type="url"
+            name="company-website"
+            placeholder="https://example.com"
+          />
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="form-group hidden">
+          <label for="lang">Coding language</label>
+          <select class="form-control" name="lang" id="lang">
+            <option value="choose" selected="selected" disabled>
+              Choose one
+            </option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">Javascript</option>
+            <option value="python">Python</option>
+          </select>
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="text-area">About you in few words</label>
+          <textarea
+            id="text-area"
+            class="form-control validate-input"
+            type="textarea"
+            name="text-area"
+            placeholder="Max 200 characters"
+            minlength="10"
+            maxlength="200"
+            required
+          ></textarea>
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        
+        <!-- <div class="form-check mb-3">
           <input
             class="form-check-input"
             type="checkbox"
@@ -59,12 +115,12 @@
           <label class="form-check-label" for="yes-newsletter"
             >Join Newsletter?
           </label>
-        </div>
+        </div> -->
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="doge">How much DogeCoin u donate me?</label>
           <input type="number" id="doge" min=20>
-        </div>
+        </div> -->
 
         <div class="form-group">
           <input class="btn btn-primary" type="submit" value="Submit" />
@@ -72,6 +128,6 @@
       </form>
     </div>
 
-    <script src="form-validation-custom.js"></script>
+    <script src="contact-me.js"></script>
   </body>
 </html>
